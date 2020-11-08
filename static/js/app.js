@@ -1,4 +1,5 @@
-var url = "http://127.0.0.1:5000//jsonified";
+//var url = "http://127.0.0.1:5000//jsonified";
+var url = "data/final_data.json";
 
 // ######## 2 Variables ########
 
@@ -156,6 +157,7 @@ function areaprice() {
 
   d3.json(url, function(response) {
     csvData = response[0][0]
+    console.log(csvData)
     // parse data
     csvData.forEach(data => {
       data.walk_score = +data.walk_score;
@@ -479,7 +481,8 @@ function allplot() {
 
   // Retrieve data and execute everything below
 
-  d3.json(url, function(response) {
+  //d3.json(url, function(response) {
+  d3.json("data/final_data.json").then((response) => {
     csvData = response[0][0]
     // parse data
     csvData.forEach(data => {
